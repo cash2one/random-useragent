@@ -24,7 +24,7 @@ ANDROID_VERSIONS = [
     '5.1', '5.1.1', '6.0', '6.0.1', '7.0', '7.1', '7.1.1', '7.1.2', '8.0', '8.1'
 ]
 
-LINUX_VERSIONS = ['Ubuntu', 'U']
+LINUX_VERSIONS = ['Ubuntu', 'U', 'Fedora']
 
 
 PLATFORM_TOKEN_MAP = {
