@@ -43,8 +43,7 @@ PLATFORM_TOKEN_MAP = {
         'X11; {version}; Linux i686 on x86_64',
     ],
     'android': [
-        'Android {version}; Mobile',
-        'Android {version}; Tablet'
+        'Android {version}'
     ]
 }
 
