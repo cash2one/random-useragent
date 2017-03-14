@@ -48,7 +48,6 @@ PLATFORM_TOKEN_MAP = {
     ]
 }
 
-
 PLATFORM_VERSION_MAP = {
     'windows': WINDOWS_VERSIONS,
     'mac': MAC_VERSIONS,
@@ -77,5 +76,7 @@ def get_platform_tokens(name=None):
 
     tokens = []
     for x in PLATFORM_TOKEN_MAP[name]:
-        tokens.extend([x.format(version=version) for version in PLATFORM_VERSION_MAP[name]])
+        tokens.extend(
+            [(name, x.format(version=version)) for version in PLATFORM_VERSION_MAP[name]]
+        )
     return tokens
