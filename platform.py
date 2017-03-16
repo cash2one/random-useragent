@@ -100,6 +100,9 @@ PLATFORM_TOKEN_MAP = {
         'Macintosh; PPC Mac OS X {version}'
     ],
     'linux': [
+        'X11; U; Linux i686',
+        'X11; U; Linux x86_64',
+        'X11; U; Linux i686 on x86_64',
         'X11; {version}; Linux i686',
         'X11; {version}; Linux x86_64',
         'X11; {version}; Linux i686 on x86_64',
