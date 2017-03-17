@@ -21,7 +21,7 @@ MAC_VERSIONS = [
 ]
 
 # list of android versions, see more 'https://source.android.com/source/build-numbers?hl=zh-cn'
-# https://source.android.com/source/build-numbers?hl=zh-cn
+#
 ANDROID_VERSIONS = {
     '4.0.1':    'Build/ITL41F',
     '4.0.2':    'Build/ICL53F',
@@ -132,21 +132,17 @@ def get_all_versions(name):
         raise ValueError('name must be one of {}'.format(names))
 
 
-def get_token(name=None):
-    token = random.choice(PLATFORM_TOKEN_MAP[name])
-    if '{version}' in token:
-        version = random.choice(get_all_versions(name))
-        token = token.format(version=version)
-    return name, token
-
-
 def random_platform_token(platforms=None):
     if platforms is None:
         name = random.choice(list(PLATFORM_TOKEN_MAP.keys()))
     else:
         name = random.choice(list(platforms))
 
-    return get_token(name)
+    token = random.choice(PLATFORM_TOKEN_MAP[name])
+    if '{version}' in token:
+        version = random.choice(get_all_versions(name))
+        token = token.format(version=version)
+    return name, token
 
 
 def get_platform_tokens(name=None):
