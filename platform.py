@@ -116,7 +116,7 @@ PLATFORM_TOKEN_MAP = {
 }
 
 
-def get_all_versions(name):
+def platform_versions(name):
     if name == 'android':
         return list(ANDROID_VERSIONS.copy().keys())
     elif name == 'windows':
@@ -140,7 +140,7 @@ def random_platform_token(platforms=None):
 
     token = random.choice(PLATFORM_TOKEN_MAP[name])
     if '{version}' in token:
-        version = random.choice(get_all_versions(name))
+        version = random.choice(platform_versions(name))
         token = token.format(version=version)
     return name, token
 
@@ -153,6 +153,6 @@ def get_platform_tokens(name=None):
     tokens = []
     for x in PLATFORM_TOKEN_MAP[name]:
         tokens.extend(
-            [(name, x.format(version=version)) for version in get_all_versions(name)]
+            [(name, x.format(version=version)) for version in platform_versions(name)]
         )
     return tokens
